@@ -828,24 +828,26 @@ getgenv().Username = "Wanwood42093"
         end
     end
 
-    local VirtualInputManager = game:GetService("VirtualInputManager")
+local VirtualInputManager = game:GetService("VirtualInputManager")
 
+-- You need to find the exact screen position of the ProximityPrompt (x=500, y=222 here as example)
+
+-- Press mouse button down at (500, 222)
 VirtualInputManager:SendMouseButtonEvent(
-    500, 222, -- u need to found ProximityPrompt position of screen
-    0,      
-    true,   
-    nil,    
-    false   
+    500, 222,
+    0,
+    true,   -- mouse button down
+    nil,
+    false
 )
 
+task.wait(0.8)  -- wait 0.8 seconds
 
-task.wait(0.8)
-
-
+-- Release mouse button at (500, 222)
 VirtualInputManager:SendMouseButtonEvent(
-    500, 222, -- u need to found ProximityPrompt position of screen
+    500, 222,
     0,
-    false,
+    false,  -- mouse button up
     nil,
     false
 )
